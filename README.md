@@ -1,7 +1,9 @@
 # <p align="center">🛸 SRPCOM HERMES PORTABLE — Portable & Cross-Platform</p>
 
 <p align="center">
-  <img src="https://srpcom.cloud/logo%20tuban%20store.png" alt="SRPCOM HERMES PORTABLE Logo" width="180">
+  <a href="https://tuban.store" target="_blank">
+    <img src="https://srpcom.cloud/logo%20tuban%20store.png" alt="SRPCOM HERMES PORTABLE Logo" width="180">
+  </a>
 </p>
 
 <p align="center">
