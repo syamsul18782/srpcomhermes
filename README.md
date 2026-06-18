@@ -1,4 +1,4 @@
-# <p align="center">🛸 SRPCOM HERMES PORTABLE — Portable & Cross-Platform</p>
+# <p align="center">🛸 SRPCOM HERMES PORTABLE — Portabel & Lintas-Platform</p>
 
 <p align="center">
   <a href="https://tuban.store" target="_blank">
@@ -7,103 +7,101 @@
 </p>
 
 <p align="center">
-  <strong>English</strong> | <a href="./README.id.md">Bahasa Indonesia</a>
+  <a href="./README.en.md">English</a> | <strong>Bahasa Indonesia</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Hermes_Agent-Portable-8A2BE2?style=for-the-badge&logo=ai" alt="SRPCOM HERMES PORTABLE">
-  <img src="https://img.shields.io/github/license/NousResearch/hermes-agent?style=for-the-badge&color=2563EB" alt="License">
-  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-059669?style=for-the-badge" alt="Platforms">
+  <img src="https://img.shields.io/badge/Hermes_Agent-Portabel-8A2BE2?style=for-the-badge&logo=ai" alt="SRPCOM HERMES PORTABLE">
+  <img src="https://img.shields.io/github/license/NousResearch/hermes-agent?style=for-the-badge&color=2563EB" alt="Lisensi">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-059669?style=for-the-badge" alt="Platform">
 </p>
 
 ---
 
 <p align="center">
-  <strong>Run a fully self-contained, self-improving AI agent from a single folder or USB drive.</strong><br>
-  No global installation. Zero host pollution. All conversations, configs, memories, and skills stay inside your folder.
+  <strong>Jalankan agen AI yang sepenuhnya mandiri dan dapat meningkatkan kemampuannya sendiri dari satu folder atau drive USB.</strong><br>
+  Tanpa instalasi global. Bebas polusi pada sistem host. Semua percakapan, konfigurasi, memori, dan keahlian (skills) tetap tersimpan di dalam folder Anda.
 </p>
 
+---
 
+## ✨ Fitur Utama
+
+*    **Tanpa Ketergantungan pada Host**: Tidak memerlukan instalasi Python, Node.js, atau manajer paket secara global di komputer Anda. Semua lingkungan eksekusi (runtimes) diunduh secara lokal.
+*    **100% Portabel**: Salin seluruh direktori ke flash drive USB atau SSD eksternal. Jalankan di komputer Windows, macOS, atau Linux apa pun secara instan.
+*    **Privasi & Isolasi Sejati**: Kunci API Anda (`data/.env`), percakapan (`data/sessions/`), memori persisten, dan keterampilan khusus disimpan sepenuhnya di dalam folder portabel Anda.
+*    **Peluncur Konsol Interaktif**: Menyediakan terminal UI dashboard yang indah dengan pelacakan status setup, penyedia LLM, dan background gateway.
+*    **Kemampuan Penuh Hermes**: Mempertahankan semua fitur dari [Nous Research's Hermes Agent](https://github.com/NousResearch/hermes-agent), termasuk penyimpanan memori dan pembuatan keahlian yang dapat digunakan kembali.
 
 ---
 
-## ✨ Key Features
+## ⚡ Memulai Cepat
 
-*    **Zero Host Dependencies**: No pre-installed Python, Node.js, or package managers required on the computer. All runtimes are downloaded locally.
-*    **100% Portable**: Copy the entire directory to a USB flash drive or external SSD. Run it on any Windows, macOS, or Linux computer instantly.
-*    **True Privacy & Isolation**: Your API keys (`data/.env`), conversations (`data/sessions/`), persistent memory, and custom skills are kept strictly within the portable folder.
-*    **Interactive Console Launcher**: Includes a beautiful terminal UI dashboard with state-tracking for setup status, LLM providers, and background gateways.
-*    **Full Hermes Capabilities**: Retains all features of [Nous Research's Hermes Agent](https://github.com/NousResearch/hermes-agent), including memory storage and reusable skill generation.
-
----
-
-## ⚡ Quick Start
-
-Get SRPCOM HERMES PORTABLE running in seconds depending on your operating system:
+Jalankan SRPCOM HERMES PORTABLE dalam hitungan detik tergantung pada sistem operasi Anda:
 
 ### Windows (10 / 11)
-Simply double-click the **`SRPCOMHERMES.bat`** file in this folder.
-> *Note: On first run, it will launch a PowerShell window to download dependencies and configure your runtime environment.*
+Cukup klik dua kali berkas **`SRPCOMHERMES.bat`** di folder ini.
+> *Catatan: Pada peluncuran pertama, jendela PowerShell akan terbuka untuk mengunduh ketergantungan dan mengonfigurasi lingkungan runtime Anda.*
 
-###  macOS & Linux
-Open your terminal in this directory and execute:
+### macOS & Linux
+Buka terminal Anda di direktori ini dan jalankan:
 ```bash
 chmod +x launch.sh
 ./launch.sh
 ```
 
-> 💡 **macOS Double-Click Shortcut:** If you want to double-click in Finder to launch, rename `launch.sh` to `launch.command`. macOS recognizes `.command` files and opens them in Terminal automatically.
+> 💡 **Pintasan Klik Ganda macOS:** Jika Anda ingin meluncurkannya dengan klik ganda di Finder, ubah nama `launch.sh` menjadi `launch.command`. macOS mengenali berkas `.command` dan membukanya di Terminal secara otomatis.
 
 ---
 
-## ⚙️ How It Works (Under the Hood)
+## ⚙️ Cara Kerja (Di Balik Layar)
 
-SRPCOM HERMES PORTABLE solves the host-dependency issue by establishing a sandboxed runtime context pointing inwards.
+SRPCOM HERMES PORTABLE menyelesaikan masalah ketergantungan pada sistem host dengan membangun konteks runtime terisolasi yang mengarah ke dalam folder lokal.
 
 ```mermaid
 graph TD
-    A[User triggers launch script] --> B{Runtimes setup?}
-    B -- No / First Run --> C[Download Portable Python 3.11 & Node.js 22]
-    C --> D[Clone Hermes Agent Source to src/]
-    D --> E[Create isolated virtual env using uv]
-    E --> F[Install Python & Node packages locally]
-    F --> G[Generate ready.flag]
-    B -- Yes / Ready --> H[Configure environment variables]
+    A[Pengguna menjalankan script peluncur] --> B{Runtime siap?}
+    B -- Tidak / Pertama Kali --> C[Unduh Python 3.11 & Node.js 22 Portabel]
+    C --> D[Klon Sumber Hermes Agent ke src/]
+    D --> E[Buat venv terisolasi menggunakan uv]
+    E --> F[Instal paket Python & Node secara lokal]
+    F --> G[Buat ready.flag]
+    B -- Ya / Siap --> H[Konfigurasi variabel lingkungan]
     G --> H
-    H --> I[Set HERMES_HOME = data/]
-    I --> J[Prepend portable bin/ paths to Env PATH]
-    J --> K[Launch Terminal Dashboard Menu]
-    K --> L[Start Chat / Background Gateway]
+    H --> I[Setel HERMES_HOME = data/]
+    I --> J[Tambahkan jalur bin/ portabel ke Env PATH]
+    J --> K[Luncurkan Menu Dashboard Terminal]
+    K --> L[Mulai Obrolan / Gateway Latar Belakang]
 ```
 
-### The Isolation Design
-1. **Custom Data Directory**: The launcher overrides `HERMES_HOME` to the local `data/` folder, forcing Hermes to write configuration and data locally rather than in `~/.hermes/`.
-2. **Local Path Sandboxing**: The scripts download self-contained Python and Node.js binaries into `.cache/runtimes/` and prepend them directly to the active process `PATH`.
-3. **No Registry/Host Pollution**: System configurations, environment variables, or packages on the host machine are left untouched.
+### Desain Isolasi
+1. **Direktori Data Kustom**: Peluncur menimpa `HERMES_HOME` ke folder lokal `data/`, memaksa Hermes untuk menulis konfigurasi dan data secara lokal daripada di `~/.hermes/` pengguna sistem.
+2. **Sandboxing Jalur Lokal**: Script mengunduh biner Python dan Node.js mandiri ke dalam `.cache/runtimes/` dan menambahkan jalurnya langsung ke depan variabel `PATH` proses aktif.
+3. **Tanpa Polusi Registry/Host**: Konfigurasi sistem, variabel lingkungan, atau paket pada mesin host tidak akan tersentuh sama sekali.
 
 ---
 
-## 📁 Workspace Directory Structure
+## 📁 Struktur Direktori Ruang Kerja
 
-A clean, modular layout where runtime caches are separated from your personal configurations.
+Tata letak yang bersih dan modular tempat cache runtime dipisahkan dari konfigurasi pribadi Anda.
 
 ```yaml
 SRPCOM HERMES PORTABLE/
-├── SRPCOMHERMES.bat           # Windows interactive launcher script
-├── launch.sh                  # macOS & Linux interactive launcher script
+├── SRPCOMHERMES.bat           # Script peluncur interaktif Windows
+├── launch.sh                  # Script peluncur interaktif macOS & Linux
 ├── scripts/
-│   ├── setup-windows.ps1      # Windows first-run configuration script
-│   └── setup-unix.sh          # Unix (macOS/Linux) first-run configuration script
-├── data/                      # ⚠️ [BACKUP THIS] All your private files
-│   ├── config.yaml            # Hermes LLM provider configurations
-│   ├── .env                   # API Keys and active credentials
-│   ├── sessions/              # Chronological chat histories
-│   ├── memories/              # Persistent memory databases
-│   └── skills/                # Learned custom skills
-├── src/                       # Downloaded Hermes Agent source code
+│   ├── setup-windows.ps1      # Script konfigurasi peluncuran pertama Windows
+│   └── setup-unix.sh          # Script konfigurasi peluncuran pertama Unix
+├── data/                      # ⚠️ [CADANGKAN INI] Semua berkas privat Anda
+│   ├── config.yaml            # Konfigurasi penyedia LLM Hermes
+│   ├── .env                   # Kunci API dan kredensial aktif
+│   ├── sessions/              # Riwayat obrolan kronologis
+│   ├── memories/              # Basis data memori persisten
+│   └── skills/                # Keterampilan kustom yang telah dipelajari
+├── src/                       # Kode sumber Hermes Agent yang diunduh
 │   └── hermes-agent/
-└── .cache/                    # Sandbox cache & binaries
-    └── runtimes/              # Platform-specific portable interpreters
+└── .cache/                    # Cache & biner sandbox
+    └── runtimes/              # Interpreter portabel khusus platform
         ├── windows-x64/
         ├── macos-arm64/
         ├── macos-x64/
@@ -113,154 +111,154 @@ SRPCOM HERMES PORTABLE/
 
 ---
 
-## 🗝️ Setup API Keys
+## 🗝️ Menyiapkan Kunci API
 
-To configure your language models, open and edit the environment variables in `data/.env`:
+Untuk mengonfigurasi model bahasa Anda, buka dan edit variabel lingkungan di `data/.env`:
 
 ```env
-# Add the keys for the providers you wish to use:
+# Tambahkan kunci API untuk penyedia yang ingin Anda gunakan:
 OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxx
 OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxx
 ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxx
 ```
 
-Alternatively, you can select option **`[2]` (Setup / Reconfigure)** in the Launcher Terminal Menu to configure model providers interactively.
+Sebagai alternatif, Anda dapat memilih opsi **`[2]` (Setup / Reconfigure SRPCOM HERMES)** di Menu Terminal Peluncur untuk mengonfigurasi penyedia model secara interaktif.
 
 ---
 
-## 🧠 Using a Local Ollama Instance
+## 🧠 Menggunakan Instansi Ollama Lokal
 
-SRPCOM HERMES PORTABLE can use an Ollama server that is already running on the same computer. Start Ollama first, then pull a model:
+SRPCOM HERMES PORTABLE dapat menggunakan server Ollama yang sudah berjalan di komputer yang sama. Jalankan Ollama terlebih dahulu, lalu unduh model:
 
 ```bash
 ollama pull qwen3.6
 ```
 
-Launch SRPCOM HERMES PORTABLE and choose **`[2]` Setup / Reconfigure SRPCOM HERMES**. In the setup wizard:
+Luncurkan SRPCOM HERMES PORTABLE dan pilih **`[2]` Setup / Reconfigure SRPCOM HERMES**. Di dalam wizard pengaturan:
 
-1. Choose **Quick setup**.
-2. Select **More providers**.
-3. Select **Custom endpoint (enter URL manually)**.
-4. Enter the local OpenAI-compatible Ollama endpoint:
+1. Pilih **Quick setup**.
+2. Pilih **More providers**.
+3. Pilih **Custom endpoint (enter URL manually)**.
+4. Masukkan endpoint Ollama lokal yang kompatibel dengan OpenAI:
 
 ```text
 http://127.0.0.1:11434/v1
 ```
 
-5. Leave the API key blank when prompted.
-6. Select the detected Ollama model and leave context length blank to auto-detect it.
+5. Biarkan kunci API kosong saat diminta.
+6. Pilih model Ollama yang terdeteksi dan biarkan panjang konteks kosong untuk mendeteksinya secara otomatis.
 
-For a remote Ollama host, use the same `/v1` endpoint format, for example `http://192.168.1.20:11434/v1`. Make sure the Ollama host is reachable from the computer running SRPCOM HERMES PORTABLE.
+Untuk host Ollama jarak jauh, gunakan format endpoint `/v1` yang sama, misalnya `http://192.168.1.20:11434/v1`. Pastikan host Ollama dapat dijangkau dari komputer yang menjalankan SRPCOM HERMES PORTABLE.
 
 ---
 
-## 🖥️ Supported Platforms
+## 🖥️ Platform yang Didukung
 
-| Operating System | CPU Architecture | Setup Status | Notes |
+| Sistem Operasi | Arsitektur CPU | Status Dukungan | Catatan |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11** | x86_64 | ✅ Supported | Default Powershell ExecutionPolicy bypassed for script |
-| **macOS 13+** | Apple Silicon (ARM64) | ✅ Supported | Native M1/M2/M3 execution |
-| **macOS 13+** | Intel (x86_64) | ✅ Supported | Legacy Intel Mac support |
-| **Linux (Ubuntu/Arch/Debian)** | x86_64 | ✅ Supported | Fully self-contained |
-| **Linux (Fedora/CentOS)** | ARM64 | ✅ Supported | Supports SBCs and ARM Servers |
+| **Windows 10 / 11** | x86_64 | ✅ Didukung | ExecutionPolicy PowerShell dilewati untuk skrip lokal |
+| **macOS 13+** | Apple Silicon (ARM64) | ✅ Didukung | Eksekusi native M1/M2/M3 |
+| **macOS 13+** | Intel (x86_64) | ✅ Didukung | Dukungan untuk Mac berbasis Intel lama |
+| **Linux (Ubuntu/Arch/Debian)** | x86_64 | ✅ Didukung | Sepenuhnya mandiri |
+| **Linux (Fedora/CentOS)** | ARM64 | ✅ Didukung | Mendukung SBC dan server ARM |
 
 ---
 
-## 📦 Cache & Runtime Footprint
+## 📦 Jejak Ukuran Runtime & Cache
 
-The current Windows x64 full first-run setup was measured at about **1.5 GB total** after setup completed.
+Ukuran instalasi awal lengkap pada Windows x64 tercatat sekitar **total 1,5 GB** setelah setup selesai.
 
-| Component | Measured / Expected Size | Notes |
+| Komponen | Ukuran Terukur / Perkiraan | Catatan |
 | :--- | :--- | :--- |
-| **Launchers & Scripts** | <1 MB | Metadata and setup automation scripts |
-| **Windows x64 Runtime** | ~800 MB | Python, Node.js, uv, Git, ripgrep, venv, and downloaded archives |
-| **Playwright / Local App Cache** | ~400 – 500 MB | Chromium browser cache used by Hermes web tools |
-| **Hermes Source Code** | ~100 MB | Downloaded Hermes Agent source tree |
-| **User Data** | ~10 MB → 2 GB+ | Grows as memory, logs, sessions, skills, and backups accumulate |
+| **Peluncur & Skrip** | <1 MB | Script otomasi setup dan metadata |
+| **Runtime Windows x64** | ~800 MB | Python, Node.js, uv, Git, ripgrep, venv, dan arsip unduhan |
+| **Playwright / Cache Aplikasi Lokal** | ~400 – 500 MB | Cache browser Chromium yang digunakan oleh alat web Hermes |
+| **Kode Sumber Hermes** | ~100 MB | Kode sumber Hermes Agent |
+| **Data Pengguna** | ~10 MB → 2 GB+ | Bertambah seiring akumulasi memori, log, sesi, dan cadangan |
 
-Recommended USB / external drive free space:
+Rekomendasi ruang kosong pada drive USB / SSD eksternal:
 
-| Use Case | Free Space to Reserve |
+| Kasus Penggunaan | Ruang Kosong yang Disarankan |
 | :--- | :--- |
-| **One platform only** | **2 GB minimum**, **4 GB recommended** |
-| **Windows + one Unix platform** | **4 – 6 GB recommended** |
-| **Windows + macOS + Linux runtimes** | **8 GB+ recommended** |
-| **Heavy long-term use with many sessions/backups** | **16 – 32 GB recommended** |
+| **Satu platform saja** | **Minimal 2 GB**, **Direkomendasikan 4 GB** |
+| **Windows + satu platform Unix** | **Direkomendasikan 4 – 6 GB** |
+| **Windows + macOS + Linux runtimes** | **Direkomendasikan 8 GB+** |
+| **Penggunaan jangka panjang intensif** | **Direkomendasikan 16 – 32 GB** |
 
-> ℹ️ *Each operating system and CPU architecture gets its own `.cache/runtimes/<platform>-<arch>/` folder, so using the same USB drive across Windows, macOS, and Linux will increase storage usage.*
+> ℹ️ *Setiap sistem operasi dan arsitektur CPU mendapatkan folder runtime-nya sendiri di bawah `.cache/runtimes/<platform>-<arch>/`, sehingga menggunakan drive USB yang sama di Windows, macOS, dan Linux akan meningkatkan penggunaan penyimpanan.*
 
 ---
 
-## 🔄 Updating SRPCOM HERMES PORTABLE
+## 🔄 Memperbarui SRPCOM HERMES PORTABLE
 
-Keep your agent up-to-date with the latest improvements from Nous Research:
+Jaga agar agen Anda tetap terperbarui dengan perbaikan terbaru dari Nous Research:
 
-*   **Via Chat Command**: Within an active Hermes conversation, type:
+*   **Melalui Perintah Chat**: Di dalam percakapan Hermes yang aktif, ketik:
     ```text
     /hermes update
     ```
-*   **Via Launcher**: Navigate to `[4] Advanced Options` -> `[5] Update Hermes` in the Launcher terminal dashboard.
-*   **Manual Rebuild**: Delete `.cache/runtimes/<your-platform>` and the `src/hermes-agent` directory, then re-run the launcher to fetch the latest code from scratch.
+*   **Melalui Peluncur**: Arahkan ke menu `[5] Advanced Options` -> `[5] Update SRPCOM HERMES` di dashboard terminal Peluncur.
+*   **Pembangunan Ulang Manual**: Hapus folder `.cache/runtimes/<platform-anda>` dan direktori `src/hermes-agent`, lalu jalankan kembali peluncur untuk mengambil kode terbaru dari awal.
 
 ---
 
-## 🔒 Security Advisory
+## 🔒 Saran Keamanan
 
 > [!WARNING]
-> **Your portable directory contains your identity.**
-> Because `data/.env` stores raw API keys and `data/sessions/` contains logs of your conversations, anyone with access to your portable drive can access your accounts.
+> **Direktori portabel Anda berisi identitas Anda.**
+> Karena `data/.env` menyimpan kunci API mentah dan `data/sessions/` berisi log percakapan Anda, siapa pun yang memiliki akses ke drive portabel Anda dapat mengakses akun Anda.
 > 
-> *   **Recommended Action**: Encrypt your USB flash drive or SSD using **BitLocker** (Windows), **FileVault** (macOS), or a cross-platform utility like **VeraCrypt**.
-> *   Avoid storing large API balances or production keys on drives you carry daily.
+> *   **Tindakan yang Disarankan**: Enkripsi USB flash drive atau SSD Anda menggunakan **BitLocker** (Windows), **FileVault** (macOS), atau utilitas lintas-platform seperti **VeraCrypt**.
+> *   Hindari menyimpan saldo API dalam jumlah besar atau kunci produksi pada drive yang Anda bawa sehari-hari.
 
 ---
 
-## 🔍 Troubleshooting & FAQ
+## 🔍 Pemecahan Masalah & Pertanyaan Umum (FAQ)
 
 <details>
-<summary><strong> First-run setup fails or times out</strong></summary>
+<summary><strong> Setup peluncuran pertama gagal atau waktu habis (timeout)</strong></summary>
 
-*   Verify your internet connection (the setup downloads ~600 MB of data).
-*   Some corporate/school firewall settings block Node.js CDNs or GitHub releases. Try configuring a VPN.
-*   Delete the `.cache/` folder and launch again to clean-install the runtimes.
+*   Verifikasi koneksi internet Anda (setup memerlukan unduhan data ~600 MB).
+*   Beberapa pengaturan firewall kantor/sekolah memblokir CDN Node.js atau rilis GitHub. Cobalah menggunakan VPN.
+*   Hapus folder `.cache/` dan jalankan kembali peluncur untuk melakukan instalasi ulang runtime.
 </details>
 
 <details>
 <summary><strong> macOS: "cannot be opened because the developer cannot be verified"</strong></summary>
 
-*   Right-click `launch.sh` (or `launch.command`), choose **Open With** and select **Terminal**.
-*   Alternatively, open terminal and strip macOS quarantine flags using:
+*   Klik kanan pada `launch.sh` (atau `launch.command`), pilih **Open With** lalu pilih **Terminal**.
+*   Sebagai alternatif, buka terminal dan hapus flag karantina macOS menggunakan:
     ```bash
-    xattr -dr com.apple.quarantine /path/to/hermes-portable
+    xattr -dr com.apple.quarantine /path/to/srpcom-hermes-portable
     ```
 </details>
 
 <details>
-<summary><strong> Windows Defender flags the launcher scripts</strong></summary>
+<summary><strong> Windows Defender menandai script peluncur sebagai berbahaya</strong></summary>
 
-*   This is a false positive caused by PowerShell scripts downloading files from remote sources (GitHub & Node.js servers).
-*   Click **"More info"** on the Windows SmartScreen dialog, then click **"Run anyway"**.
-*   The setup scripts are fully open-source and human-readable under the `scripts/` directory for your inspection.
+*   Ini adalah deteksi positif palsu (false positive) yang disebabkan oleh script PowerShell yang mengunduh berkas dari sumber eksternal (GitHub & server Node.js).
+*   Klik **"More info"** pada dialog Windows SmartScreen, lalu klik **"Run anyway"**.
+*   Script instalasi sepenuhnya bersifat open-source dan dapat Anda periksa di bawah direktori `scripts/`.
 </details>
 
 <details>
-<summary><strong> SRPCOM HERMES PORTABLE is running slowly from my flash drive</strong></summary>
+<summary><strong> SRPCOM HERMES PORTABLE berjalan lambat dari flash drive saya</strong></summary>
 
-*   Older USB 2.0 drives have slow read/write speeds, which bottleneck Python's modules import.
-*   **Solution**: Upgrade to a **USB 3.0 / 3.1** drive, or an **external SSD** for optimal performance.
+*   Drive USB 2.0 lama memiliki kecepatan baca/tulis yang lambat, yang menghambat impor modul Python.
+*   **Solusi**: Tingkatkan ke drive **USB 3.0 / 3.1**, atau **SSD eksternal** untuk kinerja optimal.
 </details>
 
 <details>
-<summary><strong> Playwright / Web Browser tools are failing</strong></summary>
+<summary><strong> Alat Playwright / Browser Web gagal dijalankan</strong></summary>
 
-*   Some OS sandboxing policies restrict web browsers (Chromium/Firefox) from starting directly inside external/removable directories.
-*   **Solution**: Copy the `hermes-portable` directory onto the local SSD and run from there.
+*   Beberapa kebijakan sandboxing OS membatasi jalannya browser (Chromium/Firefox) langsung di dalam direktori penyimpanan eksternal yang dapat dilepas.
+*   **Solusi**: Salin folder `SRPCOM HERMES PORTABLE` ke SSD lokal komputer Anda dan jalankan dari sana.
 </details>
 
 ---
 
-## 📝 Credits & Attribution
+## 📝 Kredit & Atribusi
 
-*   **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** — Powerful Agentic core created by [Nous Research](https://github.com/NousResearch).
-*   **[python-build-standalone](https://github.com/indygreg/python-build-standalone)** — Portable Python interpreter compilation.
-*   **[uv](https://github.com/astral-sh/uv)** — Blazing fast package installer and resolver.
+*   **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** — Core Agen AI yang dikembangkan oleh [Nous Research](https://github.com/NousResearch).
+*   **[python-build-standalone](https://github.com/indygreg/python-build-standalone)** — Kompilasi interpreter Python mandiri/portabel.
+*   **[uv](https://github.com/astral-sh/uv)** — Pemasang dan penyelesai ketergantungan paket Python yang sangat cepat.
