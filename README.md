@@ -1,6 +1,10 @@
 # <p align="center">🛸 SRPCOM HERMES PORTABLE — Portable & Cross-Platform</p>
 
 <p align="center">
+  <img src="https://srpcom.cloud/logo%20tuban%20store.png" alt="SRPCOM HERMES PORTABLE Logo" width="180">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Hermes_Agent-Portable-8A2BE2?style=for-the-badge&logo=ai" alt="SRPCOM HERMES PORTABLE">
   <img src="https://img.shields.io/github/license/NousResearch/hermes-agent?style=for-the-badge&color=2563EB" alt="License">
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-059669?style=for-the-badge" alt="Platforms">
